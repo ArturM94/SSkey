@@ -20,7 +20,7 @@ script:
   - coverage report --fail-under=20
   - pycodestyle src/ --ignore=E501,E402
 
-  - docker build /home/travis/build/ArturM94/SSkey/src/Dockerfile
+  - docker build /home/travis/build/ArturM94/SSkey/src
 
   - docker login --username=$DOCKER_USER --password="$HEROKU_AUTH_TOKEN" registry.heroku.com
   - docker tag sskey_web registry.heroku.com/sskey-arturm94-fork/web
