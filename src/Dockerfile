@@ -33,6 +33,7 @@ RUN chown -R sskey:sskey ./
 # instructions, and also at the start of the container
 USER sskey
 
+EXPOSE 5000
 # Set the command that must be run at the start of the container
 #ENTRYPOINT ["./boot.sh"]
 CMD ["./boot.sh"]
