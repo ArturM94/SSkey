@@ -1,5 +1,5 @@
 # Base container image
-FROM python:3.6 AS sskey_web
+FROM python:3.6
 
 # Create the new user 'sskey' with bash
 # -m, --create-home    create the user's home directory
