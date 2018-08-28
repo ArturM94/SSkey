@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  app:
+  web:
     build: ./src  # path to Dockerfile
-    container_name: sskey_app
+    container_name: sskey_web
     links:
       - db:database  # makes the `db` service available as the hostname `database`
     env_file:
