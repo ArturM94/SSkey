@@ -1,3 +1,5 @@
+sudo: required
+
 language: python
 
 python:
@@ -5,9 +7,7 @@ python:
 
 services:
   - postgresql
-
-before_install:
-  - pip install pycodestyle
+  - docker
 
 install:
   - pip install -r src/app/requirements.txt
