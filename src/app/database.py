@@ -2,7 +2,7 @@
 
 import os
 from flask_script import Manager
-from app.base import Base, engine, POSTGRES_USER, POSTGRES_PASS, POSTGRES_HOST, POSTGRES_NAME
+from app.base import Base, engine, POSTGRES_USER, POSTGRES_PASS, POSTGRES_HOST, POSTGRES_PORT, POSTGRES_NAME
 from sqlalchemy import create_engine
 from sqlalchemy.exc import ProgrammingError, SQLAlchemyError, IntegrityError
 from dotenv import load_dotenv
@@ -14,7 +14,9 @@ load_dotenv(os.path.join(basedir, '.env'))
 
 manager = Manager(usage="Perform database operations")
 
-engine_cr = create_engine(f'postgresql://{POSTGRES_USER}:{POSTGRES_PASS}@{POSTGRES_HOST}', isolation_level='AUTOCOMMIT')
+engine_cr = create_engine(f'postgresql://'
+                          f'{POSTGRES_USER}:{POSTGRES_PASS}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_NAME}',
+                          isolation_level='AUTOCOMMIT')
 
 
 @manager.command

@@ -11,7 +11,7 @@ while ! pg_isready -h ${POSTGRES_HOST} > /dev/null 2> /dev/null; do
 done
 
 echo "CREATING DATABASE"
-python3 manage.py db init
+python3 manage.py db create
 echo "STARTING SERVER"
 python3 manage.py runserver -h 0.0.0.0 # access at 192.168.99.100:5000
 #read -p "Press any key to continue... " -n 1 -
