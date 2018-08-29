@@ -20,8 +20,6 @@ script:
   - coverage report --fail-under=20
   - pycodestyle src/ --ignore=E501,E402
 
-  - heroku login
-  - heroku auth:token
   - docker build -t sskey_app ./src
 
   - docker login --username=$DOCKER_USER --password="$HEROKU_AUTH_TOKEN" registry.heroku.com
